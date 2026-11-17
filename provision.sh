@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-echo "Instalando o Apache e configurando..."
-dnf install -y httpd
+set -euo pipefail
+echo "Instalando Apache e firewalld..."
+dnf install -y httpd firewalld
 mkdir -p /var/www/html
 cp -r /vagrant/html/. /var/www/html/
-systemctl enable httpd
-systemctl start httpd
-# liberar porta 80 no firewall
-systemctl enable firewalld
-systemctl start firewalld
+systemctl enable --now httpd
+systemctl enable --now firewalld
 firewall-cmd --permanent --add-service=http
 firewall-cmd --reload
+echo "Provisionamento concluído. Acesse http://localhost:8080"

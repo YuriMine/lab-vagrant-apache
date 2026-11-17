@@ -1,0 +1,32 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate Vagrant & Shell
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Vagrant
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq vagrant
+
+      - name: Validate Vagrantfile
+        run: vagrant validate
+
+      - name: Check shell script syntax
+        run: bash -n provision.sh
+
+      - name: ShellCheck (if available)
+        run: |
+          sudo apt-get install -y -qq shellcheck
+          shellcheck provision.sh
+        continue-on-error: true
