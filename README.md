@@ -86,4 +86,4 @@ vagrant box remove generic/rocky8
 
 ## Licença
 
-MIT © YuriMine — veja [LICENSE](LICENSE).
+MIT © veja [LICENSE](LICENSE).
