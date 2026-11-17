@@ -62,8 +62,8 @@ O script executa automaticamente no `vagrant up`:
 1. Instala `httpd` e `firewalld` via `dnf`
 2. Cria `/var/www/html`
 3. Copia conteúdo de `html/` para o document root
-3. Habilita e inicia `httpd` e `firewalld`
-4. Libera porta 80 (HTTP) no firewall
+4. Habilita e inicia `httpd` e `firewalld`
+5. Libera porta 80 (HTTP) no firewall
 
 ## Troubleshooting
 

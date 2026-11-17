@@ -25,8 +25,6 @@ jobs:
       - name: Check shell script syntax
         run: bash -n provision.sh
 
-      - name: ShellCheck (if available)
+      - name: ShellCheck
         run: |
-          sudo apt-get install -y -qq shellcheck
           shellcheck provision.sh
-        continue-on-error: true

@@ -9,4 +9,14 @@ Vagrant.configure("2") do |config|
     v.cpus = 1
     v.name = "lab-vagrant-git"
   end
+
+  config.vm.provider "vmware_desktop" do |v|
+    v.vmx["memsize"] = "1024"
+    v.vmx["numvcpus"] = "1"
+  end
+
+  config.vm.provider "libvirt" do |v|
+    v.memory = 1024
+    v.cpus = 1
+  end
 end
