@@ -17,8 +17,8 @@ Subir uma máquina virtual Linux com servidor web Apache acessível em `http://l
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/YuriMine/lab-vagrant-git.git
-cd lab-vagrant-git
+git clone https://github.com/YuriMine/lab-vagrant-apache.git
+cd lab-vagrant-apache
 
 # 2. Suba a VM
 vagrant up
@@ -32,7 +32,7 @@ vagrant up
 ## Estrutura do Projeto
 
 ```
-lab-vagrant-git/
+lab-vagrant-apache/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
